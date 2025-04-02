@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import '@splinetool/viewer';
 
 const SplineBackground = ({ className = '' }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -28,49 +29,17 @@ const SplineBackground = ({ className = '' }) => {
       }
     };
 
-    // Ensure the script is loaded
-    const loadSplineScript = () => {
-      return new Promise<void>((resolve) => {
-        // Check if script already exists
-        const existingScript = document.querySelector('script[src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"]');
-        
-        if (existingScript && (existingScript as HTMLScriptElement).hasAttribute('data-loaded')) {
-          resolve();
-          return;
-        }
-        
-        const scriptElement = existingScript as HTMLScriptElement || document.createElement('script');
-        
-        if (!existingScript) {
-          scriptElement.type = 'module';
-          scriptElement.src = 'https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js';
-          document.head.appendChild(scriptElement);
-        }
-        
-        const handleLoad = () => {
-          scriptElement.setAttribute('data-loaded', 'true');
-          resolve();
-        };
-        
-        scriptElement.addEventListener('load', handleLoad);
-      });
-    };
-
-    // Load script then set up viewer
-    loadSplineScript().then(() => {
-      // Small delay to ensure custom elements are registered
-      setTimeout(() => {
-        if (isMounted) {
-          setupSplineViewer();
-        }
-      }, 100);
-    }).catch(error => {
-      console.error('Failed to load Spline script:', error);
-    });
+    // Setup viewer with a small delay to ensure custom elements are registered
+    const timeout = setTimeout(() => {
+      if (isMounted) {
+        setupSplineViewer();
+      }
+    }, 100);
 
     // Cleanup function
     return () => {
       isMounted = false;
+      clearTimeout(timeout);
     };
   }, []);
 
@@ -89,4 +58,4 @@ const SplineBackground = ({ className = '' }) => {
   );
 };
 
-export default SplineBackground; 
+export default SplineBackground;
