@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Esquinão SOM & MOTOS - Cartão Digital
 
-## Getting Started
+Um cartão digital moderno e interativo desenvolvido para a empresa Esquinão SOM & MOTOS. Construído com React, Vite, Framer Motion e Tailwind CSS.
 
-First, run the development server:
+## Características
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Interface moderna e responsiva
+- Animações fluidas com Framer Motion
+- Componentes reutilizáveis com Shadcn/ui
+- Design intuitivo para compartilhamento fácil
+- Mostra todos os serviços oferecidos pela empresa
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Serviços Destacados
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Som Automotivo
+- Insulfilm
+- Sensor de Ré
+- Multimídia
+- Alarmes
+- Manutenção de Motocicletas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tecnologias Utilizadas
 
-## Learn More
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion para animações
+- Shadcn/ui para componentes
+- Lucide React para ícones
 
-To learn more about Next.js, take a look at the following resources:
+## Como Executar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone o repositório
+2. Instale as dependências com `npm install`
+3. Execute o projeto com `npm run dev`
+4. Acesse http://localhost:5173 no seu navegador
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Personalização
 
-## Deploy on Vercel
+Este cartão digital pode ser facilmente personalizado para incluir:
+- Logotipo da empresa
+- Cores personalizadas
+- Informações de contato
+- Links para redes sociais
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Licença
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este projeto está sob a licença MIT.
